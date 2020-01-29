@@ -1,4 +1,4 @@
-package com.lzc.blog.web.admin;
+package com.lzc.blog.web;
 
 import com.lzc.blog.po.Comment;
 import com.lzc.blog.po.User;
