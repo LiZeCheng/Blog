@@ -1,5 +1,8 @@
 package com.lzc.blog.po;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +16,7 @@ public class Tag {
     private String name;
 
     @ManyToMany(mappedBy = "tags")
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private List<Blog> blogs = new ArrayList<>();
 
     public Tag() {

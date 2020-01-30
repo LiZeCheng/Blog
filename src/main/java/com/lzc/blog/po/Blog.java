@@ -33,12 +33,17 @@ public class Blog {
     private Type type;
 
     @ManyToMany(cascade = {CascadeType.PERSIST})
+    @JoinTable(name = "blog_tags",
+            foreignKey = @ForeignKey(name = "blog_tags_key", value = ConstraintMode.NO_CONSTRAINT),
+            inverseForeignKey = @ForeignKey(name = "blog_tags_key", value = ConstraintMode.NO_CONSTRAINT),
+            joinColumns = {@JoinColumn(name = "blogs", referencedColumnName = "id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "tags", referencedColumnName = "id", nullable = false)})
     private List<Tag> tags = new ArrayList<>();
 
     @ManyToOne
     private User user;
 
-    @OneToMany(mappedBy = "blog")
+    @OneToMany(cascade = {CascadeType.REMOVE}, mappedBy = "blog")
     private List<Comment> comments = new ArrayList<>();
 
     @Transient
