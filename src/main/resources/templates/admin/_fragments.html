@@ -14,7 +14,7 @@
 <nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
-            <h2 class="ui teal header item"><a href="/admin/index" style="color: teal">管理后台</a></h2>
+            <h2 class="ui teal header item"><a th:href="@{/admin}" style="color: teal">管理后台</a></h2>
             <a href="#" th:href="@{/admin/blogs}" class=" m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="mini home icon"></i>博客</a>
             <a href="#" th:href="@{/admin/types}" class=" m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="mini idea icon"></i>分类</a>
             <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="mini tags icon"></i>标签</a>
@@ -22,7 +22,7 @@
                 <div class="ui dropdown  item">
                     <div class="text">
                         <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005" th:src="@{${session.user.avatar}}">
-                        <span th:text="${session.user.nickname}">李仁密</span>
+                        <span th:text="${session.user.nickname}">李泽诚</span>
                     </div>
                     <i class="dropdown icon"></i>
                     <div class="menu">
