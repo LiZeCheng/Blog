@@ -33,6 +33,7 @@ public class BlogController {
 
     @Autowired
     private TypeService typeService;
+
     @Autowired
     private TagService tagService;
 

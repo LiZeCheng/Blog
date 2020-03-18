@@ -11,6 +11,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
+// 日志处理
 @Aspect
 @Component
 public class LogAspect {

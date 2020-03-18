@@ -48,7 +48,7 @@ public class BlogServiceImpl implements BlogService {
     }
 
     @Override
-    public Page<Blog> listBlog(Pageable pageable, BlogQuery blog) {
+    public Page<Blog> listBlog(Pageable pageable, BlogQuery blog) { //这里的BlogQuery blog是动态查询的条件。
         return blogRepository.findAll(new Specification<Blog>() {
             @Override
             public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> criteriaQuery, CriteriaBuilder criteriaBuilder) {
