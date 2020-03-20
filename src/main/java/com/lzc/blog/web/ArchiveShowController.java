@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by limi on 2017/10/23.
- */
+
 @Controller
 public class ArchiveShowController {
 
